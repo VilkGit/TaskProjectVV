@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e631eb11b407f449b5a5bfdb1c0511, type: 3}
+  m_Name: AdminLegs
+  m_EditorClassIdentifier: 
+  timeWaitShowPartLeg: 0
+  sizePartLeg: 0.25
+  prefPartLeg: {fileID: 8021460887198233332, guid: a1617427abef3014c9691b6991cca689,
+    type: 3}
