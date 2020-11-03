@@ -72,7 +72,7 @@ public class DrawPanel : MonoBehaviour
         }
     }
 
-    bool CheckColliderRayWithPanel(RaycastHit hit)
+    private bool CheckColliderRayWithPanel(RaycastHit hit)
     {
         if (hit.collider != null && hit.collider.gameObject == _panelDraw.gameObject)
         {
@@ -84,7 +84,7 @@ public class DrawPanel : MonoBehaviour
         }
     }
 
-    RaycastHit DropRay(Camera camera, Vector2 positionScreen)
+    private RaycastHit DropRay(Camera camera, Vector2 positionScreen)
     {
         Ray ray = camera.ScreenPointToRay(positionScreen);
         RaycastHit hit;
@@ -92,7 +92,7 @@ public class DrawPanel : MonoBehaviour
         return hit;
     }
 
-    void StartDraw(Vector3 pointInLocalSpase)
+    private void StartDraw(Vector3 pointInLocalSpase)
     {
         Time.timeScale = _slowTime;
         _lineDraw.positionCount = 2;
@@ -100,7 +100,7 @@ public class DrawPanel : MonoBehaviour
         _lineDraw.SetPosition(1, pointInLocalSpase);
     }
     
-    void Drawing(Vector3 pointInLocalSpase)
+    private void Drawing(Vector3 pointInLocalSpase)
     {
         _lineDraw.SetPosition(_lineDraw.positionCount - 1, pointInLocalSpase);
 
@@ -114,7 +114,7 @@ public class DrawPanel : MonoBehaviour
         }
     }
 
-    void StopDraw()
+    private void StopDraw()
     {
         Time.timeScale = 1;
         Vector3[] points = new Vector3[_lineDraw.positionCount];
