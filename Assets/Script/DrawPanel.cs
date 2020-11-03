@@ -32,19 +32,21 @@ public class DrawPanel : MonoBehaviour
         if(Input.touchCount > 0)
         {
             RaycastHit hit = DropRay(_cameraDraw, Input.touches[0].position);
-            if (!CheckColliderRayWithPanel(hit)) return;
-
-            Vector3 positionLocalSpace = transform.TransformDirection(hit.point);
-
-            if (Input.touches[0].phase == TouchPhase.Began)
+            
+            if (CheckColliderRayWithPanel(hit))
             {
-                StartDraw(positionLocalSpace);
-            }
-            else if(Input.touches[0].phase == TouchPhase.Moved)
-            {
-                Drawing(positionLocalSpace);
-            }
-            else if(Input.touches[0].phase == TouchPhase.Ended)
+                Vector3 positionLocalSpace = hit.point - transform.position + Vector3.back;
+
+                if (Input.touches[0].phase == TouchPhase.Began)
+                {
+                    StartDraw(positionLocalSpace);
+                }
+                else if(Input.touches[0].phase == TouchPhase.Moved)
+                {
+                    Drawing(positionLocalSpace);
+                }
+            }            
+            if(Input.touches[0].phase == TouchPhase.Ended)
             {
                 StopDraw();
             }
